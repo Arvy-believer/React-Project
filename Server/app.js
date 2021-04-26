@@ -1,10 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
-//const mailgun = require('mailgun-js');
 const mysql = require("mysql");
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const { ConnectionPolicyContext } = require('twilio/lib/rest/voice/v1/connectionPolicy');
+const cors = require('cors');
 
 dotenv.config({ path: './.env'});
 
@@ -29,6 +30,8 @@ app.use(express.json());
 
 app.use(cookieParser());
 
+app.use(cors());
+
 app.set('view engine', 'hbs');
 
 db.connect( (error) => {
@@ -49,6 +52,13 @@ app.use('/', require('./Routes/pages'));
 app.use('/auth', require('./Routes/auth'));
 
 
+
+
+
 app.listen(5000, ()=> {
     console.log("Server started at Port 5000");
 })
+
+
+
+

@@ -1,0 +1,268 @@
+Home {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(117, 117, 117); */
+    background-color: rgb(228, 209, 209);
+    /* background-color: rgb(238, 227, 227); */
+    font-family: "Poppins", sans-serif;
+    line-height: normal;
+    
+}
+
+
+nav {
+    
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 11vh;
+    background-color: rgb(214, 214, 214);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);  
+    font-family: "Poppins", sans-serif;
+}
+
+.logo {
+    
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    background-color: rgb(214, 214, 214);
+}
+.logo h4{
+    background-color: rgb(214, 214, 214);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    background-color: rgb(214, 214, 214);   
+}
+
+.nav-links li {
+    list-style: none;
+    background-color: rgb(214, 214, 214);
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(214, 214, 214);
+}
+
+.burger {
+    display: none;
+    background-color: rgb(214, 214, 214);
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(39, 38, 38);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 30vh;
+        top: 11vh;
+        background-color: rgb(214, 214, 214);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 110%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* main page css start here */
+/* **
+*
+** */
+
+.main
+{
+    display: grid;
+    /* background-color: rgb(212, 212, 42); */
+    /* background-color: white; */
+    min-height: 89vh;
+    grid-template-columns: 10% 40% 50% ;
+    grid-template-rows: 100% 100%;z-index: 0;
+    max-height: 89vh;
+    /* background-image: linear-gradient(to left, rgba(209, 201, 201, 0.5), rgb(165, 160, 160)); */
+    overflow: auto;
+   
+}
+.main div
+{
+    min-height: 89px;
+}
+
+
+.vaccine{
+   
+    grid-column:2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 40px 20px 0px;
+    border-right: 1px solid black;
+}
+
+.vaccine div{
+    padding: 12px;
+}
+
+.vaccine button{
+    float: left;
+    padding: 8px;
+    margin: 40px 0px 0px 0px;
+    min-width: 120px;
+    min-height: 40px;
+    text-align-last: center;
+    box-shadow: 2.5px 2.5px 1px #f1d6d6;
+    border: 0.5px solid rgb(226, 68, 68);
+    /* box-shadow: 
+    8px 8px 12px 0 rgba(0, 0, 0, 0.25),
+    -4px -4px 8px 0 rgba(255, 255, 255, 0.3); */
+    
+
+}
+.vaccine button:hover{
+    background-color: rgb(235, 160, 160);
+}
+.vaccine h1{
+    margin-top: 20px;
+}
+.book-start
+{
+    /* background-color: rgb(158, 156, 153); */
+    padding: 5%;
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    justify-content: space-evenly;
+    /* border-left: 0.5px solid black; */
+    grid-column:3/4;
+    
+    
+    
+}
+
+.book-start button{
+    max-width: 120px;
+    min-height: 40px;
+    text-align-last: center;
+    text-align-last: center;
+    box-shadow: 2.5px 2.5px 1px #f1d6d6;
+    border: 0.5px solid rgb(226, 68, 68);
+    
+}
+.book-start button:hover{
+    background-color: rgb(235, 160, 160);
+}
+
+.book-start h1,h3{
+   font-size: 60px;
+   
+}
+ /* hide vaccine part if width < 768 */
+
+@media screen and (max-width: 768px) {
+    .vaccine{
+        display: none;
+    }
+    .book-start
+    {
+        grid-column: 2/4;
+    }
+}
+.book-info
+{
+    /* background-color: rgb(141, 145, 143); */
+    grid-column:2/4;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    max-height:89vh ;
+}
+.book-info h1{
+    text-decoration: underline;
+}
+.book-vaccine div
+{
+    /* border: 0.5px solid lightblue; */
+    border-bottom: 0.5px solid rgb(202, 186, 186);
+}
+
+.info{
+    margin-top: 30px;
+}
+.info h2{
+    padding: 1%;
+}
+.info h4{
+    padding-left: 1%;
+}
+.info input,select{
+    margin: 1%;
+    min-height: 5vh;
+    min-width: 15vw;
+}
